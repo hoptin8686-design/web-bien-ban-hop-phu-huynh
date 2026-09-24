@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f1f5f9;
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-times {
+  font-family: 'Times New Roman', 'Tinos', serif;
+}
+
+/* Chuẩn kích thước giấy A4 theo Nghị định 30/2020/NĐ-CP */
+.a4-paper {
+  width: 210mm;
+  min-height: 297mm;
+  /* Lề: Trên 20mm, Dưới 20mm, Trái 30mm, Phải 20mm */
+  padding: 20mm 20mm 20mm 30mm;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  color: #000000;
+  line-height: 1.35;
+}
+
+/* Thụt đầu dòng đoạn văn chuẩn văn bản */
+.indent-standard {
+  text-indent: 1.27cm;
+}
+
+/* Chế độ In ấn (Print to PDF / In giấy A4) */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  body {
+    background: #ffffff !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .a4-paper {
+    width: 100% !important;
+    min-height: auto !important;
+    margin: 0 !important;
+    padding: 20mm 20mm 20mm 30mm !important;
+    box-shadow: none !important;
+    border: none !important;
+    transform: none !important;
+    page-break-after: always;
+  }
+
+  /* Đảm bảo bảng in sắc nét */
+  table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+  }
+
+  th, td {
+    border: 1px solid #000000 !important;
+  }
+}
